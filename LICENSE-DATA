@@ -1,0 +1,29 @@
+Dataset License — Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+The dataset (generated images, masks, depth maps, captions, tags, classification
+labels, and meta.json manifests) released through this repository is licensed
+under CC BY 4.0:
+
+    https://creativecommons.org/licenses/by/4.0/
+
+You are free to:
+  - Share — copy and redistribute the material in any medium or format
+  - Adapt — remix, transform, and build upon the material for any purpose,
+    even commercially.
+
+Under the following terms:
+  - Attribution — You must give appropriate credit, provide a link to the
+    license, and indicate if changes were made.
+
+Source images:
+  The HR source images come from the DIV2K dataset. Please respect the
+  original DIV2K terms of use:
+      https://data.vision.ee.ethz.ch/cvl/DIV2K/
+
+Citation:
+  @misc{div2kvf_2026,
+    author       = {Nasfi, Aya and Florea, Bianca-Maria and Hou, Jingkun},
+    title        = {div2KVF: A Multi-Task Image Processing Benchmark Dataset},
+    year         = {2026},
+    howpublished = {EURECOM Semester Project},
+  }

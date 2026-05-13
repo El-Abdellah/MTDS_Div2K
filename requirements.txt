@@ -1,0 +1,27 @@
+# Core deep learning
+torch>=2.1.0
+torchvision>=0.16.0
+
+# Image processing
+opencv-python>=4.8.0
+Pillow>=10.0.0
+numpy>=1.24.0
+scikit-image>=0.21.0
+
+# Models and architectures
+timm>=0.9.0
+basicsr>=1.4.2
+einops>=0.7.0
+
+# State-space (MambaIR)
+mamba-ssm>=2.0.0
+
+# Vision-language (BLIP-2, Tag2Text, CLIP scoring)
+transformers>=4.40.0
+sentencepiece>=0.2.0
+clip-by-openai
+
+# Utilities
+tqdm>=4.66.0
+pyyaml>=6.0
+pandas>=2.0.0

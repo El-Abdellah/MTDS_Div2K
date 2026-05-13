@@ -1,0 +1,40 @@
+# Dataset (hosted on Google Drive - too big for git)
+div2KVF/
+DIV2K_train_HR/
+data/
+
+# Large archives
+*.zip
+*.tar
+*.tar.gz
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Conda
+.conda/
+conda_pkgs/
+pip_cache/
+envs/
+
+# Model weights
+*.pth
+*.pt
+*.ckpt
+experiments/
+pretrained_models/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Logs
+*.log
+logs/
