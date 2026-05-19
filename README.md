@@ -12,6 +12,12 @@ models per task**, compared using a quantitative metric, and **only the best
 result is kept**. All outputs are provided as 16-bit or 8-bit PNGs with full
 metadata in a per-image `meta.json`.
 
+**Author**: Ibraguim Jalmourzaev (Eurecom — Master of Engineering, Data Science & AI)
+
+**Supervision**:
+- Abdellah El Mennaoui (PhD candidate, Eurecom)
+- Prof. Jean-Luc Dugelay (Eurecom, Imaging Security Group)
+
 ---
 
 ## Table of contents
@@ -309,11 +315,12 @@ scripts/build_dataset_info.py      # aggregates statistics across all images
 
 ```bibtex
 @misc{div2kvf_2026,
-  author       = {*****},
-  title        = {div2KVF: A Multi-Task Image Processing Benchmark Dataset},
+  author       = {Jalmourzaev, Ibraguim},
+  title        = {div2KVF: A Multi-Task Image Processing Benchmark Dataset for JPEG AI},
   year         = {2026},
   howpublished = {EURECOM Semester Project},
-  url          = {https://github.com/ibraguim-jalmourzaev/div2KVF}
+  url          = {https://github.com/ibraguim-jalmourzaev/MTDS_Div2K},
+  note         = {Supervised by Abdellah El Mennaoui and Prof. Jean-Luc Dugelay}
 }
 ```
 
@@ -332,7 +339,7 @@ Built on top of:
 
 ## License
 
-* **Repository content (code, documentation)**: MIT — see [`LICENSE`](./LICENSE).
+* **Repository content (documentation)**: MIT — see [`LICENSE`](./LICENSE).
 * **Generated dataset (annotations, masks, depth maps, captions)**: CC-BY-4.0 —
   see [`LICENSE-DATA`](./LICENSE-DATA).
 * **Source HR images**: governed by the original DIV2K terms — see
@@ -342,8 +349,10 @@ Built on top of:
 
 ## Acknowledgments
 
-* EURECOM Imaging Security Group — compute access and supervision.
+* **Abdellah El Mennaoui** (PhD candidate, Eurecom) — daily supervision and technical guidance throughout the project
+* **Prof. Jean-Luc Dugelay** (Eurecom, Imaging Security Group) — project supervision
+* Eurecom Imaging Security Group — for compute access (gravette GPU server, RTX 3090)
 * The authors of HAT, MambaIRv2, FC4, DeepWB, Depth Anything V2, MiDaS,
   DeepLabV3+, FCN, BLIP-2, Tag2Text, ResNet, MobileNet, EfficientNet — for
-  releasing their models and code.
-* DIV2K dataset — for the source HR images.
+  releasing their models and code
+* DIV2K dataset (Agustsson & Timofte, CVPRW 2017) — for the source HR images
