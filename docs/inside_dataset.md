@@ -59,6 +59,13 @@ print("Tags:   ", meta["tasks"]["tags"])
   title        = {div2KVF: A Multi-Task Image Processing Benchmark Dataset},
   year         = {2026},
   howpublished = {EURECOM Semester Project}
+
+@misc{div2kvf_2026,
+  author       = {Jalmourzaev, Ibraguim},
+  title        = {div2KVF: A Multi-Task Image Processing Benchmark Dataset for JPEG AI},
+  year         = {2026},
+  howpublished = {EURECOM Semester Project},
+  note         = {Supervised by Abdellah El Mennaoui and Prof. Jean-Luc Dugelay}
 }
 ```
 
@@ -67,6 +74,14 @@ print("Tags:   ", meta["tasks"]["tags"])
 * Generated outputs (annotations, masks, depth, captions): CC BY 4.0
 * Source HR images: see DIV2K terms — https://data.vision.ee.ethz.ch/cvl/DIV2K/
 
+## Acknowledgments
+
+* **Abdellah El Mennaoui** (PhD candidate, Eurecom) — daily supervision and technical guidance
+* **Prof. Jean-Luc Dugelay** (Eurecom, Imaging Security Group) — project supervision
+* Eurecom Imaging Security Group — for compute access (gravette GPU server)
+* Authors of HAT, MambaIRv2, FC4, DeepWB, Depth Anything V2, MiDaS, DeepLabV3+, FCN, BLIP-2, Tag2Text, ResNet, MobileNet, EfficientNet — for releasing their models and code
+* DIV2K dataset (Agustsson & Timofte, CVPRW 2017) — for the source HR images
+
 ## Full documentation
 
-GitHub: https://github.com/ibraguim-jalmourzaev/div2KVF
+GitHub: https://github.com/ibraguim-jalmourzaev/MTDS_Div2K
