@@ -50,6 +50,16 @@ annotation cost.
 For every task we compared two models and recorded both scores. The retained
 output is the per-image winner (or the union for foreground/segmentation).
 
+> **Note on inference scripts**: The scripts used to generate this dataset
+> were developed iteratively on the Eurecom GPU cluster and are tightly coupled
+> to that environment (specific CUDA versions, checkpoint paths, server-specific
+> configurations). They are not released here to avoid distributing
+> non-reproducible code. The dataset itself, however, is **fully
+> self-contained**: every output is documented, every method is named, every
+> metric is stored in `meta.json`. Researchers can rebuild equivalent
+> pipelines using the original repositories of the models cited below.
+
+---
 ---
 
 ## Dataset structure
@@ -186,18 +196,26 @@ procedure.
 
 ## Download
 
-The full dataset is hosted on Hugging Face as a single archive.
+The full dataset is hosted on Hugging Face Datasets:
 
-**[Download div2KVF.zip on Hugging Face ]https://huggingface.co/datasets/ibraguim/MTDS-Div2K/tree/main**
-
-After downloading:
+**[Download div2KVF.zip on Hugging Face](https://huggingface.co/datasets/ibraguim/MTDS-Div2K)**
 
 ```bash
+wget https://huggingface.co/datasets/ibraguim/MTDS-Div2K/resolve/main/div2KVF.zip
 unzip div2KVF.zip
 ```
 
-For maintainers: see [`docs/RELEASE_GUIDE.md`](./docs/RELEASE_GUIDE.md) for the
-end-to-end packaging and upload procedure.
+Or via the `huggingface_hub` Python API:
+
+```python
+from huggingface_hub import hf_hub_download
+
+zip_path = hf_hub_download(
+    repo_id="ibraguim/MTDS-Div2K",
+    filename="div2KVF.zip",
+    repo_type="dataset"
+)
+```
 
 ---
 
@@ -220,7 +238,7 @@ sr = cv2.imread(str(root / meta["tasks"]["sr"]["file"]))
 print("Caption:", meta["tasks"]["caption"]["text"])
 print("Method:",  meta["tasks"]["caption"]["method"])
 
-# Depth: load the 16-bit PNG (inverse disparity)
+# Depth: 16-bit PNG (inverse disparity)
 depth = cv2.imread(str(root / "depth.png"), cv2.IMREAD_UNCHANGED)
 print("Depth dtype:", depth.dtype, "shape:", depth.shape)
 
@@ -246,68 +264,6 @@ for folder in sorted(ROOT.glob("[0-9]" * 4)):
     meta = json.loads((folder / "meta.json").read_text())
     # do something with meta...
 ```
-
----
-
-## Reproducing the dataset
-
-Hardware used: NVIDIA RTX 3090 (24 GB) on EURECOM's `gravette` server.
-
-### 1. Setup
-
-```bash
-git clone https://github.com/ibraguim-jalmourzaev/div2KVF.git
-cd div2KVF
-
-conda create -n div2kvf python=3.8 -y
-conda activate div2kvf
-
-pip install -r requirements.txt
-```
-
-### 2. Download source images
-
-```bash
-wget https://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_train_HR.zip
-unzip DIV2K_train_HR.zip
-```
-
-Apply the anonymization step (manual face removal) — see
-[`docs/anonymization.md`](./docs/anonymization.md). 800 images become 752.
-
-### 3. Pretrained weights
-
-| Task    | Weights                                            | Source |
-|---------|----------------------------------------------------|--------|
-| HAT     | `HAT_SRx2_ImageNet-pretrain.pth`                   | XPixelGroup/HAT releases (Google Drive) |
-| MambaIR | `mambairv2_classicSR_Base_x2.pth`                  | csguoh/MambaIR model zoo |
-| DAv2    | Auto-downloaded via HuggingFace transformers       | `depth-anything/Depth-Anything-V2-Small-hf` |
-| MiDaS   | Auto-downloaded via `torch.hub`                    | `intel-isl/MiDaS` |
-| FC4     | Pretrained on ColorChecker                         | original repo |
-| DeepWB  | Public weights                                     | original repo |
-| BLIP-2  | Auto-downloaded                                    | `Salesforce/blip2-opt-2.7b` |
-| Tag2Text| `tag2text_swin_14m.pth`                            | `xinyu1205/tag2text` |
-
-### 4. Run inference scripts
-
-Each task is independent and writes its outputs + updates each image's
-`meta.json`. Suggested order:
-
-```
-scripts/run_sr.py                  # HAT + MambaIR + per-image winner
-scripts/run_awb.py                 # FC4 + DeepWB + winner
-scripts/run_depth.py               # DAv2 + MiDaS + winner
-scripts/run_seg_fg.py              # segmentation + foreground
-scripts/run_caption.py             # BLIP-2 + Tag2Text + CLIP scoring
-scripts/run_classification.py      # ResNet50 + EfficientNet-B4
-scripts/run_blur.py                # motion blur kernels
-scripts/run_noise.py               # Poisson + Gaussian
-scripts/build_dataset_info.py      # aggregates statistics across all images
-```
-
-> Note: this repository ships dataset, schema, and documentation. The
-> inference scripts are kept private to the EURECOM working tree; ask the
-> authors for access if you need to regenerate the data.
 
 ---
 
