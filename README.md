@@ -110,7 +110,7 @@ Winner selected per image by PSNR + SSIM.
 | Model        | Type                          | Weights                                | Paper                                              |
 |--------------|-------------------------------|----------------------------------------|----------------------------------------------------|
 | HAT          | Hybrid Attention Transformer  | `HAT_SRx2_ImageNet-pretrain.pth`       | [arXiv:2309.05239](https://arxiv.org/abs/2309.05239) |
-| MambaIRv2    | State-space model (Base)      | `mambairv2_classicSR_Base_x2.pth`      | [arXiv:2412.04237](https://arxiv.org/abs/2412.04237) |
+| MambaIRv2    | State-space model (Base)      | `mambairv2_classicSR_Base_x2.pth`      | [arXiv:2411.15269](https://arxiv.org/abs/2411.15269) |
 
 | Metric     | HAT     | MambaIRv2 | Winner |
 |------------|---------|-----------|--------|
@@ -127,7 +127,7 @@ brightness boost (lower is better).
 | Model    | Type                                       | Notes                                  | Paper                                              |
 |----------|--------------------------------------------|----------------------------------------|----------------------------------------------------|
 | FC4      | SqueezeNet + Confidence-Weighted Pooling   | Global illuminant; trained on ColorChecker. Correction: `hr / (illuminant * sqrt(3))`, normalize, gamma 1/2.2. | [arXiv:1804.06197](https://arxiv.org/abs/1804.06197) |
-| DeepWB   | Spatial per-pixel estimator                | Direct image-to-image translation      | [arXiv:2010.10510](https://arxiv.org/abs/2010.10510) |
+| DeepWB   | Spatial per-pixel estimator                | Direct image-to-image translation      | [arXiv:2004.01354](https://arxiv.org/abs/2004.01354) |
 
 | Metric             | FC4       | DeepWB | Winner |
 |--------------------|-----------|--------|--------|
