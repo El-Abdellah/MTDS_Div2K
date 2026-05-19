@@ -126,7 +126,7 @@ brightness boost (lower is better).
 
 | Model    | Type                                       | Notes                                  | Paper                                              |
 |----------|--------------------------------------------|----------------------------------------|----------------------------------------------------|
-| FC4      | SqueezeNet + Confidence-Weighted Pooling   | Global illuminant; trained on ColorChecker. Correction: `hr / (illuminant * sqrt(3))`, normalize, gamma 1/2.2. | [arXiv:1804.06197](https://arxiv.org/abs/1804.06197) |
+| FC4      | SqueezeNet + Confidence-Weighted Pooling   | Global illuminant; trained on ColorChecker. Correction: `hr / (illuminant * sqrt(3))`, normalize, gamma 1/2.2. | [open access](https://openaccess.thecvf.com/content_cvpr_2017/papers/Hu_FC4_Fully_Convolutional_CVPR_2017_paper.pdf) |
 | DeepWB   | Spatial per-pixel estimator                | Direct image-to-image translation      | [arXiv:2004.01354](https://arxiv.org/abs/2004.01354) |
 
 | Metric             | FC4       | DeepWB | Winner |
