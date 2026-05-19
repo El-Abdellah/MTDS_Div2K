@@ -180,9 +180,9 @@ procedure.
 
 ## Download
 
-The full dataset is hosted on Google Drive as a single archive.
+The full dataset is hosted on Hugging Face as a single archive.
 
-**[Download div2KVF.zip on Google Drive](https://drive.google.com/your-link-here)**
+**[Download div2KVF.zip on Hugging Face ]https://huggingface.co/datasets/ibraguim/MTDS-Div2K/tree/main**
 
 After downloading:
 
