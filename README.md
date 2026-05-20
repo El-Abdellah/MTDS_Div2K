@@ -1,4 +1,4 @@
-# div2KVF
+# JPEG AI MTL dataset
 
 [![Dataset](https://img.shields.io/badge/dataset-752%20images-blue)]()
 [![Size](https://img.shields.io/badge/size-~71%20GB-informational)]()
@@ -15,7 +15,7 @@ metadata in a per-image `meta.json`.
 **Author**: Ibraguim Jalmourzaev (Eurecom — Master of Engineering, Data Science & AI)
 
 **Supervision**:
-- Abdellah El Mennaoui (PhD candidate, Eurecom)
+- [Abdellah El Mennaoui](https://www.linkedin.com/in/el-mennaoui-abdellah/) (PhD Candidate, Sorbonne University & :contentReference[oaicite:0]{index=0})
 - Prof. Jean-Luc Dugelay (Eurecom, Imaging Security Group)
 
 ---
