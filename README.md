@@ -12,11 +12,11 @@ models per task**, compared using a quantitative metric, and **only the best
 result is kept**. All outputs are provided as 16-bit or 8-bit PNGs with full
 metadata in a per-image `meta.json`.
 
-**Author**: Ibraguim Jalmourzaev (Eurecom — Master of Engineering, Data Science & AI https://www.linkedin.com/in/ibraguim-jalmourzaev-8b830a279/ )
+**Author**: [Ibraguim Jalmourzaev](https://www.linkedin.com/in/ibraguim-jalmourzaev-8b830a279/) (Eurecom - Master of Engineering, Data Science & AI)
 
 **Supervision**:
-- Abdellah El Mennaoui (PhD candidate, Huawei, Sorbonne University https://www.linkedin.com/in/el-mennaoui-abdellah/ )
-- Prof. Jean-Luc Dugelay (Eurecom, Imaging Security Group https://dugelay.eurecom.io)
+- [Abdellah El Mannaoui](https://www.linkedin.com/in/el-mannaoui-abdellah/) (PhD candidate, Huawei, Sorbonne University)
+- [Prof. Jean-Luc Dugelay](https://dugelay.eurecom.io) (Eurecom, Imaging Security Group)
 
 ---
 
