@@ -1,4 +1,4 @@
-# Multi Task Data SET (MTDS)
+# Multi Task Data SET (MTDS) JPEG AI
 
 [![Dataset](https://img.shields.io/badge/dataset-752%20images-blue)]()
 [![Size](https://img.shields.io/badge/size-~71%20GB-informational)]()
