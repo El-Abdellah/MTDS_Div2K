@@ -12,11 +12,11 @@ models per task**, compared using a quantitative metric, and **only the best
 result is kept**. All outputs are provided as 16-bit or 8-bit PNGs with full
 metadata in a per-image `meta.json`.
 
-**Author**: Ibraguim Jalmourzaev (Eurecom — Master of Engineering, Data Science & AI)
+**Author**: Ibraguim Jalmourzaev (Eurecom — Master of Engineering, Data Science & AI https://www.linkedin.com/in/ibraguim-jalmourzaev-8b830a279/ )
 
 **Supervision**:
-- Abdellah El Mennaoui (PhD candidate, Eurecom)
-- Prof. Jean-Luc Dugelay (Eurecom, Imaging Security Group)
+- Abdellah El Mennaoui (PhD candidate, Huawei, Sorbonne University https://www.linkedin.com/in/el-mennaoui-abdellah/ )
+- Prof. Jean-Luc Dugelay (Eurecom, Imaging Security Group https://dugelay.eurecom.io)
 
 ---
 
@@ -305,7 +305,7 @@ Built on top of:
 
 ## Acknowledgments
 
-* **Abdellah El Mennaoui** (PhD candidate, Eurecom) — daily supervision and technical guidance throughout the project
+* **Abdellah El Mennaoui** (Abdellah El Mennaoui (PhD candidate, Huawei) — daily supervision and technical guidance throughout the project
 * **Prof. Jean-Luc Dugelay** (Eurecom, Imaging Security Group) — project supervision
 * Eurecom Imaging Security Group — for compute access (gravette GPU server, RTX 3090)
 * The authors of HAT, MambaIRv2, FC4, DeepWB, Depth Anything V2, MiDaS,
