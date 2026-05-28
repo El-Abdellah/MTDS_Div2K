@@ -15,7 +15,7 @@ metadata in a per-image `meta.json`.
 **Author**: Ibraguim Jalmourzaev (Eurecom — Master of Engineering, Data Science & AI)
 
 **Supervision**:
-- Abdellah El Mennaoui (PhD candidate, Eurecom)
+- Abdellah El Mennaoui (PhD candidate, Sor)
 - Prof. Jean-Luc Dugelay (Eurecom, Imaging Security Group)
 
 ---
@@ -198,7 +198,7 @@ procedure.
 
 The full dataset is hosted on Hugging Face Datasets:
 
-**[Download div2KVF.zip on Hugging Face](https://huggingface.co/datasets/ibraguim/MTDS-Div2K)**
+**[Download div2KVF.zip on Hugging Face](https://huggingface.co/datasets/ibraguim/JPEGAI-MTDS/tree/main)**
 
 ```bash
 wget https://huggingface.co/datasets/ibraguim/MTDS-Div2K/resolve/main/div2KVF.zip
