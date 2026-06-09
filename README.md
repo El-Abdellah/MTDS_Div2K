@@ -4,10 +4,10 @@
 [![Size](https://img.shields.io/badge/size-~71%20GB-informational)]()
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8+-3776AB?logo=python&logoColor=white)]()
-[![Source](https://img.shields.io/badge/source-DIV2K-orange)](https://data.vision.ee.ethz.ch/cvl/DIV2K/)
+[![Source](https://img.shields.io/badge/source-JPEGAIMTL2k-orange)](https://data.vision.ee.ethz.ch/cvl/JPEGAIMTL2k/)
 
 A multi-task image processing benchmark dataset built on top of the 752 training
-images from DIV2K. Each image has been processed by **multiple state-of-the-art
+images from JPEGAIMTL2k. Each image has been processed by **multiple state-of-the-art
 models per task**, compared using a quantitative metric, and **only the best
 result is kept**. All outputs are provided as 16-bit or 8-bit PNGs with full
 metadata in a per-image `meta.json`.
@@ -15,7 +15,7 @@ metadata in a per-image `meta.json`.
 **Author**: [Ibraguim Jalmourzaev](https://www.linkedin.com/in/ibraguim-jalmourzaev-8b830a279/) (Eurecom - Master of Engineering, Data Science & AI)
 
 **Supervision**:
-- [Abdellah El Mannaoui](https://www.linkedin.com/in/el-mannaoui-abdellah/) (PhD candidate, Huawei, Sorbonne University)
+- [Abdellah El Mennaoui](https://www.linkedin.com/in/el-mannaoui-abdellah/) (PhD candidate, Huawei, Sorbonne University)
 - [Prof. Jean-Luc Dugelay](https://dugelay.eurecom.io) (Eurecom, Imaging Security Group)
 
 ---
@@ -42,7 +42,7 @@ machine vision performance (downstream tasks).
 
 A key limitation of current learned compression systems is that modules
 (encoder, decoder, vision heads) are typically trained separately, preventing
-global optimization. **div2KVF** addresses this by providing a unified
+global optimization. **JPEGAIMTL2K** addresses this by providing a unified
 multi-task dataset where a single input image is paired with multiple
 AI-generated ground truths — usable for end-to-end MTL training at no manual
 annotation cost.
@@ -65,9 +65,9 @@ output is the per-image winner (or the union for foreground/segmentation).
 ## Dataset structure
 
 ```
-div2KVF/
+JPEGAIMTL2kVF/
 ├── 0001/
-│   ├── hr.png                # original DIV2K HR image
+│   ├── hr.png                # original JPEGAIMTL2k HR image
 │   ├── sr_x2.png             # best super-resolution x2 (HAT or MambaIRv2)
 │   ├── awb.png               # best automatic white balance (FC4 or DeepWB)
 │   ├── depth.png             # best depth map, 16-bit (DAv2 or MiDaS)
@@ -185,7 +185,7 @@ Winner selected per image by CLIP ViT-B/32 image-text cosine similarity
 | Total images          | 752                  |
 | Files per image       | 20                   |
 | Total size            | ~71 GB               |
-| Source                | DIV2K Train HR       |
+| Source                | JPEGAIMTL2k Train HR       |
 | Anonymization applied | Yes (faces removed)  |
 
 See `dataset_info.json` at the dataset root for the machine-readable summary,
@@ -198,11 +198,11 @@ procedure.
 
 The full dataset is hosted on Hugging Face Datasets:
 
-**[Download div2KVF.zip on Hugging Face](https://huggingface.co/datasets/ibraguim/JPEGAI-MTDS/tree/main)**
+**[Download JPEGAIMTL2kVF.zip on Hugging Face](https://huggingface.co/datasets/ibraguim/JPEGAI-MTDS/tree/main)**
 
 ```bash
-wget https://huggingface.co/datasets/ibraguim/MTDS-Div2K/resolve/main/div2KVF.zip
-unzip div2KVF.zip
+wget https://huggingface.co/datasets/ibraguim/MTDS-JPEGAIMTL2k/resolve/main/JPEGAIMTL2kVF.zip
+unzip JPEGAIMTL2kVF.zip
 ```
 
 Or via the `huggingface_hub` Python API:
@@ -211,8 +211,8 @@ Or via the `huggingface_hub` Python API:
 from huggingface_hub import hf_hub_download
 
 zip_path = hf_hub_download(
-    repo_id="ibraguim/MTDS-Div2K",
-    filename="div2KVF.zip",
+    repo_id="ibraguim/MTDS-JPEGAIMTL2k",
+    filename="JPEGAIMTL2kVF.zip",
     repo_type="dataset"
 )
 ```
@@ -227,7 +227,7 @@ import cv2
 from pathlib import Path
 
 # Pick any image folder
-root = Path("div2KVF/0046")
+root = Path("JPEGAIMTL2kVF/0046")
 meta = json.loads((root / "meta.json").read_text())
 
 # Load HR and best SR
@@ -254,7 +254,7 @@ A dataset-wide iteration helper:
 import json
 from pathlib import Path
 
-ROOT = Path("div2KVF")
+ROOT = Path("JPEGAIMTL2kVF")
 with open(ROOT / "dataset_info.json") as f:
     info = json.load(f)
 
@@ -270,19 +270,19 @@ for folder in sorted(ROOT.glob("[0-9]" * 4)):
 ## Citation
 
 ```bibtex
-@misc{div2kvf_2026,
+@misc{JPEGAIMTL2kvf_2026,
   author       = {Jalmourzaev, Ibraguim and El Mennaoui, Abdellah and Dugelay, Jean-Luc},
-  title        = {div2KVF: A Multi-Task Image Processing Benchmark Dataset for JPEG AI},
+  title        = {JPEGAIMTL2kVF: A Multi-Task Image Processing Benchmark Dataset for JPEG AI},
   year         = {2026},
   howpublished = {xxxxx},
-  url          = {https://github.com/ibraguim-jalmourzaev/MTDS_Div2K}
+  url          = {https://github.com/ibraguim-jalmourzaev/MTDS_JPEGAIMTL2k}
 }
 ```
 
 Built on top of:
 
 ```bibtex
-@inproceedings{agustsson2017div2k,
+@inproceedings{agustsson2017JPEGAIMTL2k,
   author    = {Agustsson, Eirikur and Timofte, Radu},
   title     = {NTIRE 2017 Challenge on Single Image Super-Resolution: Dataset and Study},
   booktitle = {CVPRW},
@@ -297,8 +297,8 @@ Built on top of:
 * **Repository content (documentation)**: MIT — see [`LICENSE`](./LICENSE).
 * **Generated dataset (annotations, masks, depth maps, captions)**: CC-BY-4.0 —
   see [`LICENSE-DATA`](./LICENSE-DATA).
-* **Source HR images**: governed by the original DIV2K terms — see
-  https://data.vision.ee.ethz.ch/cvl/DIV2K/.
+* **Source HR images**: governed by the original JPEGAIMTL2k terms — see
+  https://data.vision.ee.ethz.ch/cvl/JPEGAIMTL2k/.
 
 ---
 
@@ -310,4 +310,4 @@ Built on top of:
 * The authors of HAT, MambaIRv2, FC4, DeepWB, Depth Anything V2, MiDaS,
   DeepLabV3+, FCN, BLIP-2, Tag2Text, ResNet, MobileNet, EfficientNet — for
   releasing their models and code
-* DIV2K dataset (Agustsson & Timofte, CVPRW 2017) — for the source HR images
+* JPEGAIMTL2k dataset (Agustsson & Timofte, CVPRW 2017) — for the source HR images
