@@ -271,12 +271,11 @@ for folder in sorted(ROOT.glob("[0-9]" * 4)):
 
 ```bibtex
 @misc{div2kvf_2026,
-  author       = {Jalmourzaev, Ibraguim},
+  author       = {Ibraguim Jalmourzaev and Abdellah El Mennaoui and Jean-Luc Dugelay},
   title        = {div2KVF: A Multi-Task Image Processing Benchmark Dataset for JPEG AI},
   year         = {2026},
-  howpublished = {EURECOM Semester Project},
-  url          = {https://github.com/ibraguim-jalmourzaev/MTDS_Div2K},
-  note         = {Supervised by Abdellah El Mennaoui and Prof. Jean-Luc Dugelay}
+  howpublished = {EURECOM Research Project},
+  url          = {https://github.com/ibraguim-jalmourzaev/MTDS_Div2K}
 }
 ```
 
