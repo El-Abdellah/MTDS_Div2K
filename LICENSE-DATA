@@ -20,10 +20,4 @@ Source images:
   original DIV2K terms of use:
       https://data.vision.ee.ethz.ch/cvl/DIV2K/
 
-Citation:
-  @misc{div2kvf_2026,
-    author       = {Nasfi, Aya and Florea, Bianca-Maria and Hou, Jingkun},
-    title        = {div2KVF: A Multi-Task Image Processing Benchmark Dataset},
-    year         = {2026},
-    howpublished = {EURECOM Semester Project},
-  }
+
